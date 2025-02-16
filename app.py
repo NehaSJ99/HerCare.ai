@@ -89,9 +89,9 @@ def main():
             # Append AI's response to the chat history
             st.session_state.chat_history.append(("ai", response))
 
-            # Clear the input field after sending the message
-            st.session_state.user_input = ""  # Reset the input field
-
+            # Reset the input field by clearing the session state variable instead
+            st.session_state.user_input = ""  # This updates the session state for the next input
+            
             # Streamlit will automatically rerun the app to reflect changes in the session state (no need to call st.rerun())
 
 if __name__ == "__main__":
