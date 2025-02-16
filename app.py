@@ -13,7 +13,7 @@ def load_knowledge_base():
 knowledge_base = load_knowledge_base()
 
 # Initialize the Gemini client
-gemini_client = Client(api_key="AIzaSyDekHmFWhgsom8b_5YVJn_HR8kdXErOUMA")  # Replace with your API key
+gemini_client = Client(api_key="YOUR_API_KEY")  # Replace with your API key
 
 # Function to find the most relevant answer from knowledge base
 def retrieve_answer(user_input):
@@ -55,10 +55,6 @@ def main():
     # Initialize session state for chat history
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = []
-    
-    # Initialize session state for user input (empty string)
-    if "user_input" not in st.session_state:
-        st.session_state.user_input = ""
 
     st.title("HerCare AI - Your Menstrual Health Chatbot 💖")
     st.write("🤗 Chat with me about menstrual health, PCOS, periods, menopause, fertility, and more!")
@@ -75,24 +71,17 @@ def main():
                 st.markdown(f"**HerCare AI:** {message}")
 
     # User input
-    user_input = st.text_input("Ask me anything about menstrual health:", key="user_input", value=st.session_state.user_input)
+    user_input = st.text_input("Ask me anything about menstrual health:", key="user_input")
     
     if st.button("Send"):
         if user_input.strip():
-            # Append user's input to the chat history
             st.session_state.chat_history.append(("user", user_input))
 
             with st.spinner("Thinking..."):
-                # Get the AI response
                 response = get_gemini_response(user_input, [msg for _, msg in st.session_state.chat_history])
             
-            # Append AI's response to the chat history
             st.session_state.chat_history.append(("ai", response))
-
-            # Reset the input field by clearing the session state variable instead
-            st.session_state.user_input = ""  # This updates the session state for the next input
-            
-            # Streamlit will automatically rerun the app to reflect changes in the session state (no need to call st.rerun())
+            st.rerun()  # Refresh UI to display new messages
 
 if __name__ == "__main__":
     main()
