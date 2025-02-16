@@ -7,7 +7,7 @@ gemini_client = Client(api_key="AIzaSyDekHmFWhgsom8b_5YVJn_HR8kdXErOUMA")
 def get_gemini_response(user_input):
     try:
         # Construct a prompt for the Gemini API
-        prompt = f"Answer the following question in a concise manner: {user_input}"
+        prompt = f"Provide advice on managing the following situation: {user_input}"
         
         # Call Gemini API to generate content
         response = gemini_client.models.generate_content(
