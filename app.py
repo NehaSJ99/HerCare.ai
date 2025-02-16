@@ -81,7 +81,7 @@ def main():
                 response = get_gemini_response(user_input, [msg for _, msg in st.session_state.chat_history])
             
             st.session_state.chat_history.append(("ai", response))
-            st.rerun()  # Refresh UI to display new messages
+            st.experimental_rerun()
 
 if __name__ == "__main__":
     main()
