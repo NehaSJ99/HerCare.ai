@@ -1,4 +1,4 @@
-# HerCare AI Chatbot 🤖💙  
+# HerCare AI Chatbot   
 
 HerCare AI Chatbot is an **AI-powered assistant** designed to provide **personalized menstrual health support**. Using **Gemini AI** with **RAG (Retrieval-Augmented Generation)**, it offers **cycle tracking insights, symptom-based recommendations, and period care tips**. The chatbot is deployed using **Streamlit** for an interactive and user-friendly experience.  
 
@@ -17,7 +17,7 @@ HerCare AI Chatbot is an **AI-powered assistant** designed to provide **personal
 ## 🚀 Getting Started  
 Follow these steps to set up and run the chatbot locally:  
 
-### 1️⃣ Clone the Repository  
+### Steps to Run 
 ```bash
 git clone https://github.com/your-username/HerCare-AI-Chatbot.git  
 cd HerCare-AI-Chatbot
