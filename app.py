@@ -13,7 +13,7 @@ def load_knowledge_base():
 knowledge_base = load_knowledge_base()
 
 # Initialize the Gemini client
-gemini_client = Client(api_key="AIzaSyD7Nzvwg7wQdk9RYrMP-ZFxp2Wn1N9hv8k")  # Replace with your API key
+gemini_client = Client(api_key="")  # Replace with your API key
 
 # Function to find the most relevant answer from knowledge base
 def retrieve_answer(user_input):
